@@ -9,13 +9,10 @@ We explain the grading policy before task specification so that you will not mis
 | Keeping your GitHub repository private          | 5%        | You must keep your repository **private** at all times.                  |
 | Having at least three commits on different days | 5%        | You should commit three times during different days in your repository.  |
 | Code style                                      | 10%       | You get 10% by default, and every 5 warnings from CheckStyle deducts 1%. |                     |
-| Public test cases                               | 30%       | (# of passing tests / # of provided tests) * 20%                         |
+| Public test cases                               | 30%       | (# of passing tests / # of provided tests) * 30%                         |
 | Hidden test cases                               | 50%       | (# of passing tests / # of provided tests) * 50%                         |
 
-Please try to compile your code with `./gradlew build` before submission.
-You will not get any marks of public/hidden test
-cases if your code does not compile.
-
+Please try to compile your code with `./gradlew build` before submission. You will not get any marks of public/hidden test cases if your code does not compile. You are allowed to use lock, semaphore, condition, wait and notify/notifyAll in this assignment to synchronize the threads. If you take advantage of other synchronization API functions to implement a requirement, you will get zero for that part.
 
 ## Submission
 
@@ -34,7 +31,7 @@ https://github.com/tai-man-chan/COMP3021-PA1
 Note that we are using automatic scripts to process your submission.
 **DO NOT add extra explanation** to the file; otherwise they will prevent our scripts from correctly processing your
 submission.
-Feel free to email us if you need clarification.
+Feel free to email us if you have any questions.
 
 You need to submit the file to Canvas. The deadline for this assignment is **May [X], 2023, 23:59:59**.
 
