@@ -12,7 +12,10 @@ We explain the grading policy before task specification so that you will not mis
 | Public test cases                               | 30%       | (# of passing tests / # of provided tests) * 30%                         |
 | Hidden test cases                               | 50%       | (# of passing tests / # of provided tests) * 50%                         |
 
-Please try to compile your code with `./gradlew build` before submission. You will not get any marks of public/hidden test cases if your code does not compile. You are allowed to use lock, semaphore, condition, wait and notify/notifyAll in this assignment to synchronize the threads. If you take advantage of other synchronization API functions to implement a requirement, you will get zero for that part.
+Please try to compile your code with `./gradlew build` before submission.
+You will not get any marks of public/hidden test
+cases if your code does not compile.
+
 
 ## Submission
 
@@ -22,18 +25,18 @@ You should submit a single text file specified as follows:
   the TAs' accounts as collaborators near the deadline.
 
 For example, a student CHAN, Tai Man with ITSC ID `tmchanaa` having a repository
-at `https://github.com/tai-man-chan/COMP3021-PA1` should submit a file named `tmchanaa.txt` with the following content:
+at `https://github.com/tai-man-chan/COMP3021-PA3` should submit a file named `tmchanaa.txt` with the following content:
 
 ```text
-https://github.com/tai-man-chan/COMP3021-PA1
+https://github.com/tai-man-chan/COMP3021-PA3
 ```
 
 Note that we are using automatic scripts to process your submission.
 **DO NOT add extra explanation** to the file; otherwise they will prevent our scripts from correctly processing your
 submission.
-Feel free to email us if you have any questions.
+Feel free to email us if you need clarification.
 
-You need to submit the file to Canvas. The deadline for this assignment is **May [X], 2023, 23:59:59**.
+You need to submit the file to Canvas. The deadline for this assignment is **May 18, 2023, 23:59:59**.
 
 **We will grade your submission based on the latest committed version before the deadline.**
 Please make sure all the amendments are made before the deadline and do not make changes after the deadline.
@@ -47,3 +50,7 @@ You can run `./gradlew checkstyleMain` in the integrated terminal of IntelliJ to
 
 We trust that you are familiar with Honor Code of HKUST. If not, refer to
 [this page](https://course.cse.ust.hk/comp3021/#honorcode).
+
+## Contact Us
+
+If you have any question, please contact Maryam Masoudian ([mamt@connect.ust.hk](mailto:mamt@connect.ust.hk)).

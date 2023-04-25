@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="10.3.2">
+<file name="/Users/xiangqian/Documents/TA/comp3021_charles_2023S/COMP3021-2023Spring-PA3-Skeleton/src/main/java/hk/ust/comp3021/MiniMendeleyEngine.java">
+</file>
+<file name="/Users/xiangqian/Documents/TA/comp3021_charles_2023S/COMP3021-2023Spring-PA3-Skeleton/src/main/java/hk/ust/comp3021/person/Researcher.java">
+</file>
+<file name="/Users/xiangqian/Documents/TA/comp3021_charles_2023S/COMP3021-2023Spring-PA3-Skeleton/src/main/java/hk/ust/comp3021/person/User.java">
+</file>
+<file name="/Users/xiangqian/Documents/TA/comp3021_charles_2023S/COMP3021-2023Spring-PA3-Skeleton/src/main/java/hk/ust/comp3021/person/Person.java">
+</file>
+<file name="/Users/xiangqian/Documents/TA/comp3021_charles_2023S/COMP3021-2023Spring-PA3-Skeleton/src/main/java/hk/ust/comp3021/utils/BibExporter.java">
+</file>
+<file name="/Users/xiangqian/Documents/TA/comp3021_charles_2023S/COMP3021-2023Spring-PA3-Skeleton/src/main/java/hk/ust/comp3021/utils/UserRegister.java">
+</file>
+<file name="/Users/xiangqian/Documents/TA/comp3021_charles_2023S/COMP3021-2023Spring-PA3-Skeleton/src/main/java/hk/ust/comp3021/utils/BibParser.java">
+</file>
+<file name="/Users/xiangqian/Documents/TA/comp3021_charles_2023S/COMP3021-2023Spring-PA3-Skeleton/src/main/java/hk/ust/comp3021/utils/Query.java">
+</file>
+<file name="/Users/xiangqian/Documents/TA/comp3021_charles_2023S/COMP3021-2023Spring-PA3-Skeleton/src/main/java/hk/ust/comp3021/action/StatisticalInformationAction.java">
+</file>
+<file name="/Users/xiangqian/Documents/TA/comp3021_charles_2023S/COMP3021-2023Spring-PA3-Skeleton/src/main/java/hk/ust/comp3021/action/LabelAction.java">
+</file>
+<file name="/Users/xiangqian/Documents/TA/comp3021_charles_2023S/COMP3021-2023Spring-PA3-Skeleton/src/main/java/hk/ust/comp3021/action/UploadPaperAction.java">
+</file>
+<file name="/Users/xiangqian/Documents/TA/comp3021_charles_2023S/COMP3021-2023Spring-PA3-Skeleton/src/main/java/hk/ust/comp3021/action/ParallelImportAction.java">
+</file>
+<file name="/Users/xiangqian/Documents/TA/comp3021_charles_2023S/COMP3021-2023Spring-PA3-Skeleton/src/main/java/hk/ust/comp3021/action/LabelActionList.java">
+</file>
+<file name="/Users/xiangqian/Documents/TA/comp3021_charles_2023S/COMP3021-2023Spring-PA3-Skeleton/src/main/java/hk/ust/comp3021/action/SearchMultipleKeywordsAction.java">
+</file>
+<file name="/Users/xiangqian/Documents/TA/comp3021_charles_2023S/COMP3021-2023Spring-PA3-Skeleton/src/main/java/hk/ust/comp3021/action/QueryAction.java">
+</file>
+<file name="/Users/xiangqian/Documents/TA/comp3021_charles_2023S/COMP3021-2023Spring-PA3-Skeleton/src/main/java/hk/ust/comp3021/action/SortPaperAction.java">
+</file>
+<file name="/Users/xiangqian/Documents/TA/comp3021_charles_2023S/COMP3021-2023Spring-PA3-Skeleton/src/main/java/hk/ust/comp3021/action/SearchPaperAction.java">
+</file>
+<file name="/Users/xiangqian/Documents/TA/comp3021_charles_2023S/COMP3021-2023Spring-PA3-Skeleton/src/main/java/hk/ust/comp3021/action/Action.java">
+</file>
+<file name="/Users/xiangqian/Documents/TA/comp3021_charles_2023S/COMP3021-2023Spring-PA3-Skeleton/src/main/java/hk/ust/comp3021/action/AddCommentAction.java">
+</file>
+<file name="/Users/xiangqian/Documents/TA/comp3021_charles_2023S/COMP3021-2023Spring-PA3-Skeleton/src/main/java/hk/ust/comp3021/action/SearchResearcherAction.java">
+</file>
+<file name="/Users/xiangqian/Documents/TA/comp3021_charles_2023S/COMP3021-2023Spring-PA3-Skeleton/src/main/java/hk/ust/comp3021/action/AddLabelAction.java">
+</file>
+<file name="/Users/xiangqian/Documents/TA/comp3021_charles_2023S/COMP3021-2023Spring-PA3-Skeleton/src/main/java/hk/ust/comp3021/action/DownloadPaperAction.java">
+</file>
+<file name="/Users/xiangqian/Documents/TA/comp3021_charles_2023S/COMP3021-2023Spring-PA3-Skeleton/src/main/java/hk/ust/comp3021/MiniMendeley.java">
+</file>
+<file name="/Users/xiangqian/Documents/TA/comp3021_charles_2023S/COMP3021-2023Spring-PA3-Skeleton/src/main/java/hk/ust/comp3021/resource/Label.java">
+</file>
+<file name="/Users/xiangqian/Documents/TA/comp3021_charles_2023S/COMP3021-2023Spring-PA3-Skeleton/src/main/java/hk/ust/comp3021/resource/Paper.java">
+</file>
+<file name="/Users/xiangqian/Documents/TA/comp3021_charles_2023S/COMP3021-2023Spring-PA3-Skeleton/src/main/java/hk/ust/comp3021/resource/Comment.java">
+</file>
+</checkstyle>
