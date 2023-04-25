@@ -10,6 +10,7 @@ It should support the following functionalities:
 - Efficient Query Processing
 
 Most of the classes are the same as the ones in PA1 and PA2. In what follows, we provide more concrete specifications for the methods you need to implement in this project.
+You also provide several illustrative figures in PA3.pdf to help you understand the specifications.
 
 ## Parallel Import of bib Files
 You should add a new functionality to import multiple bib files in parallel. Fully implement the functional interfaces of the class `ParallelImportAction` in order to add the functionality of importing multiple bib files in parallel. Utilize the method `userInterfaceForParallelImport` to receive the absolute path of the files from the user. Add all the files stored in  `importedPapers` to  `paperBase` data structure used for storing the papers. ​ Note that a user can only import 10 files one at a time. Implement the function `processParallelImport` to perform the importing of the bib files in parallel and store the results in `importedPapers`. You can only use lock, wait, notify and notifyAll to synchronize the threads. You must ensure that all the threads have equal access to the `importedPapers`. 
