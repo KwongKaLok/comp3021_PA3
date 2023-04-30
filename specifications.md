@@ -30,7 +30,7 @@ You should add a new functionality to read from a large file and process each qu
 
 1. ADD,object, value 
 2. UPDATE, object, condition, value 
-3. REMOEVE, object, condition
+3. REMOVE, object, condition
 
 An `action` in a query indicates the operation to be perfomred. An `object` refers to the kind of object, either a paper or an elment of it, that is target of the query. And, `value` includes the value of the object that must be added or deleted. Condition refers to the condition of the object to be updated. Utilize the method `userInterfaceConcurrentQueryProcess` to receive the absolute path of the file containing the queries. Implement the function `processConcurrentQuery` to process a query. Note that you can use as many threads as you want for this task. However, your must ensure that your implementation satisfies the highest efficiency in processing all the queries within a file with thousands of queries. A sample file is stored in `resources/query.txt` for your reference. You can only use semaphore, lock, wait, notify and notifyAll to synchronize the threads. You must ensure that all the threads have equal access to the `results` arraylist.
 
