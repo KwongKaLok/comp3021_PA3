@@ -380,7 +380,6 @@ public class MiniMendeleyEngine {
      *                              list of path files entered by the user
      */
     public void processParallelImport(User curUser, ParallelImportAction parallelImportAction) {
-//      Object lock = new Object();
       List<String>tempFiles = new ArrayList<String>();
       Thread []threads = new Thread[parallelImportAction.maxNumberofThreads()];
       for(String filePath:parallelImportAction.getFilePaths()) {
