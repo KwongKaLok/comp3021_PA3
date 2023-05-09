@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">3</div>
+<div class="counter">2</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.016s</div>
+<div class="counter">0.059s</div>
 <p>duration</p>
 </div>
 </td>
@@ -51,7 +51,7 @@
 </td>
 <td>
 <div class="infoBox failures" id="successRate">
-<div class="percent">40%</div>
+<div class="percent">60%</div>
 <p>successful</p>
 </div>
 </td>
@@ -66,106 +66,12 @@
 <li>
 <a href="#tab1">Tests</a>
 </li>
+<li>
+<a href="#tab2">Standard output</a>
+</li>
 </ul>
 <div id="tab0" class="tab">
 <h2>Failed tests</h2>
-<div class="test">
-<a name="testSearchMultipleKeywords_ActionsSize()"></a>
-<h3 class="failures">testSearchMultipleKeywords_ActionsSize()</h3>
-<span class="code">
-<pre>org.opentest4j.AssertionFailedError: expected: &lt;1&gt; but was: &lt;2&gt;
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:527)
-	at hk.ust.comp3021.actions.SearchMultipleKeywordsTest.testSearchMultipleKeywords_ActionsSize(SearchMultipleKeywordsTest.java:40)
-	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.lang.reflect.Method.invoke(Method.java:577)
-	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
-	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-	at org.junit.jupiter.engine.extension.SameThreadTimeoutInvocation.proceed(SameThreadTimeoutInvocation.java:45)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:217)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
-	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
-	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
-	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.lang.reflect.Method.invoke(Method.java:577)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-	at jdk.proxy1.$Proxy2.stop(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
-	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-</pre>
-</span>
-</div>
 <div class="test">
 <a name="testSearchMultipleKeywords_CheckNumberOfWords1()"></a>
 <h3 class="failures">testSearchMultipleKeywords_CheckNumberOfWords1()</h3>
@@ -177,7 +83,7 @@
 	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
 	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
 	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:179)
-	at hk.ust.comp3021.actions.SearchMultipleKeywordsTest.testSearchMultipleKeywords_CheckNumberOfWords1(SearchMultipleKeywordsTest.java:113)
+	at hk.ust.comp3021.actions.SearchMultipleKeywordsTest.testSearchMultipleKeywords_CheckNumberOfWords1(SearchMultipleKeywordsTest.java:115)
 	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.lang.reflect.Method.invoke(Method.java:577)
 	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
@@ -274,7 +180,7 @@
 	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
 	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
 	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:179)
-	at hk.ust.comp3021.actions.SearchMultipleKeywordsTest.testSearchMultipleKeywords_IsFound(SearchMultipleKeywordsTest.java:59)
+	at hk.ust.comp3021.actions.SearchMultipleKeywordsTest.testSearchMultipleKeywords_IsFound(SearchMultipleKeywordsTest.java:61)
 	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.lang.reflect.Method.invoke(Method.java:577)
 	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
@@ -372,31 +278,114 @@
 </tr>
 </thead>
 <tr>
-<td class="failures">testSearchMultipleKeywords_ActionsSize()</td>
-<td class="failures">0.003s</td>
-<td class="failures">failed</td>
+<td class="success">testSearchMultipleKeywords_ActionsSize()</td>
+<td class="success">0.008s</td>
+<td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testSearchMultipleKeywords_CheckNumberOfWords()</td>
-<td class="success">0.003s</td>
+<td class="success">0.008s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="failures">testSearchMultipleKeywords_CheckNumberOfWords1()</td>
-<td class="failures">0.003s</td>
+<td class="failures">0.006s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="success">testSearchMultipleKeywords_CheckNumberOfWords2()</td>
-<td class="success">0.002s</td>
+<td class="success">0.010s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="failures">testSearchMultipleKeywords_IsFound()</td>
-<td class="failures">0.005s</td>
+<td class="failures">0.027s</td>
 <td class="failures">failed</td>
 </tr>
 </table>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>Paper ID: Heinen2015, Title: Verifying pointer programs using graph grammars
+Paper ID: Gannod2001, Title: An investigation into the connectivity properties of source-header dependency graphs
+Paper ID: Marron2008, Title: Efficient context-sensitive shape analysis with graph based heap models
+Paper ID: Ramalingam2002, Title: Deriving specialized program analyses for certifying component-client conformance
+Found 4 results.
+Paper ID: Heinen2015, Title: Verifying pointer programs using graph grammars
+Paper ID: Gannod2001, Title: An investigation into the connectivity properties of source-header dependency graphs
+Paper ID: Marron2008, Title: Efficient context-sensitive shape analysis with graph based heap models
+Paper ID: Ramalingam2002, Title: Deriving specialized program analyses for certifying component-client conformance
+Found 4 results.
+currentSize: 2
+originalSize: 1
+Paper ID: Heinen2015, Title: Verifying pointer programs using graph grammars
+Paper ID: Gannod2001, Title: An investigation into the connectivity properties of source-header dependency graphs
+Paper ID: Marron2008, Title: Efficient context-sensitive shape analysis with graph based heap models
+Paper ID: Ramalingam2002, Title: Deriving specialized program analyses for certifying component-client conformance
+Found 4 results.
+Paper ID: Heinen2015, Title: Verifying pointer programs using graph grammars
+Paper ID: Gannod2001, Title: An investigation into the connectivity properties of source-header dependency graphs
+Paper ID: Marron2008, Title: Efficient context-sensitive shape analysis with graph based heap models
+Found 54 results.
+Paper ID: Dean1995, Title: Optimization of object-oriented programs using static class hierarchy analysis
+Paper ID: Piskac2014, Title: Automating separation logic with trees and data
+Paper ID: Dillig2010, Title: Symbolic heap abstraction with demand-driven axiomatization of memory invariants
+Paper ID: Piskac2013, Title: Automating Separation Logic Using SMT (Technical Report)
+Paper ID: Reynolds2002, Title: Separation logic: A logic for shared mutable data structures
+Paper ID: Lee2018, Title: Accelerating search-based program synthesis using learned probabilistic models
+Paper ID: Lvov2012, Title: Nonlinear invariants for linear loops and eigenpolynomials of linear operators
+Paper ID: Ahmad2018, Title: Automatically leveraging MapReduce frameworks for data-intensive applications
+Paper ID: Kapus2019, Title: Computing summaries of string loops in C for better testing and refactoring
+Paper ID: Fink2008, Title: Effective typestate verification in the presence of aliasing
+Paper ID: Gorogiannis2019, Title: A true positives theorem for a static race detector
+Paper ID: Jeannet2009, Title: Apron: A library of numerical abstract domains for static analysis
+Paper ID: Jeannet2007, Title: by Bertrand Jeannet and the APRON team
+Paper ID: Xie2015, Title: S-Looper: Automatic summarization for multipath string loops
+Paper ID: Balakrishnan2009, Title: Refining the control structure of loops using static analysis
+Paper ID: Choi2022, Title: Can Reactive Synthesis and Syntax-Guided Synthesis Be Friends?
+Paper ID: Godefroid2011, Title: Automatic partial loop summarization in dynamic test generation
+Paper ID: Le2019, Title: SLinG: Using dynamic analysis to infer program invariants in separation logic
+Paper ID: Pham2019, Title: Compositional Verification of Heap-Manipulating Programs through Property-Guided Learning
+Paper ID: Head2014, Title: Analysis and Methods for Supporting Generative Metaprogramming in Large Scale C ++ Projects
+Paper ID: Xie2019, Title: Automatic Loop Summarization via Path Dependency Analysis
+Paper ID: Bogudlov2007, Title: Revamping TVLA: Making parametric shape analysis competitive
+Paper ID: Zhao2012, Title: The HipHop compiler for PHP
+Paper ID: Krishnaswamy2000, Title: Automatic precompiled headers: Speeding up C++ application build times
+Paper ID: Gannod2001, Title: An investigation into the connectivity properties of source-header dependency graphs
+Paper ID: Barke2020, Title: Just-in-time learning for bottom-up enumerative synthesis
+Paper ID: Simon2006, Title: Widening polyhedra with landmarks
+Paper ID: Sotiropoulos2020, Title: A model for detecting faults in build specifications
+Paper ID: Sharma2011, Title: Simplifying loop invariant generation using splitter predicates
+Paper ID: Krishnamurti2011, Title: Bridging parametric shape and parametric design”
+Paper ID: Haller2016, Title: Scalable data structure detection and classification for C/C++ binaries
+Paper ID: Toubhans2014, Title: An abstract domain combinator for separately conjoining memory abstractions
+Paper ID: Ramalingam2002, Title: Deriving specialized program analyses for certifying component-client conformance
+Paper ID: Ancourt2010, Title: A modular static analysis approach to affine loop invariants detection
+Paper ID: Grech2018, Title: Shooting from the heap: Ultra-scalable static analysis with heap snapshots
+Paper ID: Albiz2009, Title: Implementation and Use of Data Structures in Java Programs
+Paper ID: Maisonneuve2014, Title: Computing invariants with transformers: Experimental scalability and accuracy
+Paper ID: Quinlan2006, Title: An extensible open-source compiler infrastructure for testing
+Paper ID: Gopan2007, Title: Guided static analysis
+Paper ID: Abdulla2016, Title: Verification of heap manipulating programs with ordered data by extended forest automata
+Paper ID: Martel2003, Title: Improving the static analysis of loops by dynamic partitioning techniques
+Paper ID: Rinetzky2005, Title: A semantics for procedure local heaps and its abstractions
+Paper ID: Heinen2015, Title: Verifying pointer programs using graph grammars
+Paper ID: Feng2017, Title: Component-based synthesis of table consolidation and transformation tasks from examples
+Paper ID: McCloskey2010, Title: Statically inferring complex heap, array, and numeric invariants
+Paper ID: Ullio2012, Title: LSD (Landing system development) impact simulation
+Paper ID: Kanvar2017, Title: What's in a name? Going beyond allocation site names in heap analysis
+Paper ID: Shi2021, Title: Path-sensitive sparse analysis without path conditions
+Paper ID: Cousot2014, Title: Abstract interpretation: Past, present and future
+Paper ID: Pinzger2008, Title: A tool for visual understanding of source code dependencies
+Paper ID: Doctoral2017, Title: Algorithmic Resource Verification
+Paper ID: Liu2022, Title: Leveraging Application Data Constraints to OptimizeDatabase-Backed Web Applications
+Paper ID: Marron2008, Title: Efficient context-sensitive shape analysis with graph based heap models
+Paper ID: Hackett2005, Title: Region-based shape analysis with tracked locations
+Paper ID: Karkare2018, Title: TwAS: Two-stage shape analysis for speed and precision
+Found 71 results.
+</pre>
+</span>
 </div>
 </div>
 <div id="footer">
@@ -406,7 +395,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.5</a> at 2023/5/9 下午 10:49:57</p>
+<a href="http://www.gradle.org">Gradle 7.5</a> at 2023/5/10 上午 02:00:24</p>
 </div>
 </div>
 </body>

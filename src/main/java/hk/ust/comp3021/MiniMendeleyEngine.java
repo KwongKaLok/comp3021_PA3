@@ -14,6 +14,7 @@ import java.util.Queue;
 import java.util.Scanner;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Semaphore;
 
 import hk.ust.comp3021.action.Action;
 import hk.ust.comp3021.action.AddCommentAction;
@@ -459,6 +460,36 @@ public class MiniMendeleyEngine {
      */
     public void processMultiKeywordSearch(User curUser, SearchMultipleKeywordsAction multipleSearch)
             throws InterruptedException {
+        List<String> words = multipleSearch.getWords();
+        Map<String, String> results = new HashMap<>();
+        int foundResults = 0;
+
+        Semaphore semaphore = new Semaphore(5);
+        Object lock = new Object();
+
+        for (String word : words) {
+            semaphore.acquire();
+            new Thread(() -> {
+                for (String paperId : paperBase.keySet()) {
+                    Paper paper = paperBase.get(paperId);
+                    if (paper.getTitle().contains(word) || paper.getKeywords().contains(word)) {
+                        synchronized (lock) {
+                            results.put(paper.getPaperID(), paper.getTitle());
+                            multipleSearch.increaseFound();
+                        }
+                    }
+                }
+                semaphore.release();
+            }).start();
+        }
+
+        semaphore.acquire(5);
+        this.getActions().add(multipleSearch);
+        for (String paperId : results.keySet()) {
+            System.out.println("Paper ID: " + paperId + ", Title: " + results.get(paperId));
+        }
+        System.out.println("Found " + multipleSearch.getFoundResult() + " results.");
+
 
     }
 
@@ -861,10 +892,15 @@ public class MiniMendeleyEngine {
     private void userInterfaceForMultiKeywordSearch(User curUser) throws InterruptedException {
         System.out.println(
                 "Please enter at most 20 keywords for searching separated by \"+ \" (e.g. word1 + word2 + word3):");
-        ArrayList<String> words = new ArrayList();
+        ArrayList<String> words = new ArrayList<>();
         SearchMultipleKeywordsAction searchMultipleKeywordsAction = new SearchMultipleKeywordsAction(
                 "Action_" + actions.size(), curUser, new Date());
         Scanner scan11 = new Scanner(System.in);
+        String input = scan11.nextLine();
+        String[] keywords = input.split("\\+ ");
+        for (String keyword : keywords) {
+            words.add(keyword.trim());
+        }
         processMultiKeywordSearch(curUser, searchMultipleKeywordsAction);
     }
 

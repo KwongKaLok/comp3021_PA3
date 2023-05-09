@@ -11,7 +11,6 @@ import hk.ust.comp3021.resource.Paper;
 
 public class ParallelImportAction extends Action {
     public static int maxFileNumber = 10;
-
     private List<UploadPaperAction> importActions = new ArrayList<>();
     public static HashMap<String, Paper> importedPapers = new HashMap<>();
     private ArrayList<String> filePaths = new ArrayList<>();

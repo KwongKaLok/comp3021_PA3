@@ -73,6 +73,7 @@ public class ParallelImportActionTest {
 		engine.processParallelImport(user, importAction);
 
 		Set<String> importedPaperIds =  importAction.getImportedPapers().keySet();
+		System.out.print(importedPaperIds.size());
 		assertTrue(importedPaperIds.size() > 0);
 	}
 	
