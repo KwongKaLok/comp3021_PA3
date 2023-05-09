@@ -1,5 +1,8 @@
 package hk.ust.comp3021;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -8,6 +11,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 import java.util.Scanner;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import hk.ust.comp3021.action.Action;
 import hk.ust.comp3021.action.AddCommentAction;
@@ -374,7 +379,23 @@ public class MiniMendeleyEngine {
      *                              list of path files entered by the user
      */
     public void processParallelImport(User curUser, ParallelImportAction parallelImportAction) {
-
+      int index=0;
+      ExecutorService executor = Executors.newFixedThreadPool(parallelImportAction.maxNumberofThreads());
+      parallelImportAction.setCompleted(false);
+      for (String filePath : parallelImportAction.getFilePaths()) {
+        executor.execute(() -> {
+          BibParser parser = new BibParser(filePath);
+          parser.parse();
+          parallelImportAction.setImportedPapers(parser.getResult());
+        });
+    }
+     this.getActions().add(parallelImportAction);
+    executor.shutdown();
+    if(parallelImportAction.getFilePaths().size()>parallelImportAction.maxNumberofThreads()) {
+      parallelImportAction.setCompleted(false);
+    }else {
+      parallelImportAction.setCompleted(true);
+      }
     }
 
     /**
@@ -771,6 +792,12 @@ public class MiniMendeleyEngine {
 
         if (scan10.hasNextLine()) {
             String name = scan10.nextLine();
+            String[] filePaths = name.split(",");
+            ArrayList<String> importFilePaths = new ArrayList<String>();
+            for (String filePath : filePaths) {
+              importFilePaths.add(filePath.trim());
+            }
+            parallelImport.setFilePaths(importFilePaths);
         }
         processParallelImport(curUser, parallelImport);
 

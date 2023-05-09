@@ -35,6 +35,7 @@ public class ParallelImportActionTest {
 		engine.processParallelImport(user, importAction);
 
 		int currentSize = engine.getActions().size();
+	
 		assertTrue(currentSize>= originalSize+1);
 	}
 
@@ -100,7 +101,7 @@ public class ParallelImportActionTest {
 		ParallelImportAction importAction = new ParallelImportAction("Action_1", user, new Date());
 		importAction.setFilePaths(bibFilePath);
 		engine.processParallelImport(user, importAction);
-
+		
 		assertFalse(importAction.isCompleted());
 	}
 

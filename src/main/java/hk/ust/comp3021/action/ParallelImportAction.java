@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
+
 import hk.ust.comp3021.person.User;
 import hk.ust.comp3021.resource.Paper;
 
@@ -25,7 +26,6 @@ public class ParallelImportAction extends Action {
 
     public ParallelImportAction(String id, User user, Date time) {
         super(id, user, time, ActionType.UPLOAD_PARALLEL);
-
     }
 
 
