@@ -51,6 +51,6 @@ public class ConcurrentQueryTest {
 			if (query.isCompleted())
 				completed++;
 
-		assertEquals(completed, 16);
+		assertEquals(completed, 18);
 	}
 }
