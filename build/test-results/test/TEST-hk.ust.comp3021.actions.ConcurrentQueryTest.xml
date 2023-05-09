@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="hk.ust.comp3021.actions.ConcurrentQueryTest" tests="2" skipped="0" failures="2" errors="0" timestamp="2023-05-09T08:54:52" hostname="KadeMacBook-Air-6.local" time="0.036">
+<testsuite name="hk.ust.comp3021.actions.ConcurrentQueryTest" tests="2" skipped="0" failures="2" errors="0" timestamp="2023-05-09T14:41:25" hostname="KadeMacBook-Air-6.local" time="0.036">
   <properties/>
   <testcase name="QueryProcessing_ActionSize()" classname="hk.ust.comp3021.actions.ConcurrentQueryTest" time="0.026">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;2&gt; but was: &lt;1&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;2&gt; but was: &lt;1&gt;
@@ -94,7 +94,7 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="QueryProcessing_CheckResult()" classname="hk.ust.comp3021.actions.ConcurrentQueryTest" time="0.01">
+  <testcase name="QueryProcessing_CheckResult()" classname="hk.ust.comp3021.actions.ConcurrentQueryTest" time="0.009">
     <failure message="org.opentest4j.AssertionFailedError: expected: &lt;0&gt; but was: &lt;16&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;0&gt; but was: &lt;16&gt;
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)

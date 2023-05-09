@@ -1,6 +1,7 @@
 package hk.ust.comp3021;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -379,23 +380,72 @@ public class MiniMendeleyEngine {
      *                              list of path files entered by the user
      */
     public void processParallelImport(User curUser, ParallelImportAction parallelImportAction) {
-      int index=0;
-      ExecutorService executor = Executors.newFixedThreadPool(parallelImportAction.maxNumberofThreads());
-      parallelImportAction.setCompleted(false);
-      for (String filePath : parallelImportAction.getFilePaths()) {
-        executor.execute(() -> {
-          BibParser parser = new BibParser(filePath);
-          parser.parse();
-          parallelImportAction.setImportedPapers(parser.getResult());
-        });
-    }
-     this.getActions().add(parallelImportAction);
-    executor.shutdown();
-    if(parallelImportAction.getFilePaths().size()>parallelImportAction.maxNumberofThreads()) {
-      parallelImportAction.setCompleted(false);
-    }else {
-      parallelImportAction.setCompleted(true);
+//      Object lock = new Object();
+      List<String>tempFiles = new ArrayList<String>();
+      Thread []threads = new Thread[parallelImportAction.maxNumberofThreads()];
+      for(String filePath:parallelImportAction.getFilePaths()) {
+        tempFiles.add(filePath);
       }
+      
+      for(int i=0;i<parallelImportAction.maxNumberofThreads();i++) {
+        threads[i] = new Thread(()->{
+          synchronized(this) {
+            while(!tempFiles.isEmpty()) {
+              String tempFilePath = tempFiles.remove(0);
+              this.notifyAll(); 
+            try {
+              BibParser parser = new BibParser(tempFilePath);
+              parser.parse();
+              parallelImportAction.setImportedPapers(parser.getResult());
+              for (Map.Entry<String, Paper> entry : parser.getResult().entrySet()) {
+                paperBase.put(entry.getKey(), entry.getValue());
+              }
+            }
+            catch(Exception e) {}
+            try {
+              if(!tempFiles.isEmpty()) {
+                this.wait();
+              }
+            }
+            catch(InterruptedException e) {}
+            }
+          }
+        });
+        threads[i].start();
+      }
+      
+      for(Thread thread:threads) {
+        try {
+          thread.join();  
+        }
+        catch(InterruptedException e) {}
+      }
+      if (parallelImportAction.getFilePaths().size()>parallelImportAction.maxNumberofThreads()) {
+        parallelImportAction.setCompleted(false);
+      }else {
+        parallelImportAction.setCompleted(true);
+      }
+      this.getActions().add(parallelImportAction);
+
+//      ExecutorService executor = Executors.newFixedThreadPool(parallelImportAction.maxNumberofThreads());
+//      parallelImportAction.setCompleted(false);
+//      for (String filePath : parallelImportAction.getFilePaths()) {
+//        executor.execute(() -> {
+//          BibParser parser = new BibParser(filePath);
+//          parser.parse();
+//          parallelImportAction.setImportedPapers(parser.getResult());
+//          for (Map.Entry<String, Paper> entry : parser.getResult().entrySet()) {
+//            paperBase.put(entry.getKey(), entry.getValue());
+//          }
+//        });
+//    }
+//     this.getActions().add(parallelImportAction);
+//    executor.shutdown();
+//    if(parallelImportAction.getFilePaths().size()>parallelImportAction.maxNumberofThreads()) {
+//      parallelImportAction.setCompleted(false);
+//    }else {
+//      parallelImportAction.setCompleted(true);
+//      }
     }
 
     /**

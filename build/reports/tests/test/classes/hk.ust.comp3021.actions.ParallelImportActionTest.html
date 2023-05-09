@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">0</div>
+<div class="counter">2</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.030s</div>
+<div class="counter">0.028s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox success" id="successRate">
-<div class="percent">100%</div>
+<div class="infoBox failures" id="successRate">
+<div class="percent">60%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,16 +61,207 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Tests</a>
+<a href="#tab0">Failed tests</a>
 </li>
 <li>
-<a href="#tab1">Standard output</a>
+<a href="#tab1">Tests</a>
 </li>
 <li>
 <a href="#tab2">Standard error</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="testPrallelImportAction_CheckPaperContent()"></a>
+<h3 class="failures">testPrallelImportAction_CheckPaperContent()</h3>
+<span class="code">
+<pre>java.lang.NullPointerException: Cannot invoke &quot;hk.ust.comp3021.resource.Paper.getJournal()&quot; because the return value of &quot;java.util.HashMap.get(Object)&quot; is null
+	at hk.ust.comp3021.actions.ParallelImportActionTest.testPrallelImportAction_CheckPaperContent(ParallelImportActionTest.java:123)
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.lang.reflect.Method.invoke(Method.java:577)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.SameThreadTimeoutInvocation.proceed(SameThreadTimeoutInvocation.java:45)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:217)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.lang.reflect.Method.invoke(Method.java:577)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy1.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="testPrallelImportAction_CheckPaperSet()"></a>
+<h3 class="failures">testPrallelImportAction_CheckPaperSet()</h3>
+<span class="code">
+<pre>org.opentest4j.AssertionFailedError: expected: &lt;true&gt; but was: &lt;false&gt;
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:179)
+	at hk.ust.comp3021.actions.ParallelImportActionTest.testPrallelImportAction_CheckPaperSet(ParallelImportActionTest.java:76)
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.lang.reflect.Method.invoke(Method.java:577)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.SameThreadTimeoutInvocation.proceed(SameThreadTimeoutInvocation.java:45)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:217)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.lang.reflect.Method.invoke(Method.java:577)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy1.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -87,116 +278,100 @@
 </tr>
 <tr>
 <td class="success">testPrallelImportAction_CheckNumberOfFilePaths()</td>
-<td class="success">0.009s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPrallelImportAction_CheckPaperContent()</td>
 <td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testPrallelImportAction_CheckPaperSet()</td>
-<td class="success">0.005s</td>
-<td class="success">passed</td>
+<td class="failures">testPrallelImportAction_CheckPaperContent()</td>
+<td class="failures">0.004s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">testPrallelImportAction_CheckPaperSet()</td>
+<td class="failures">0.006s</td>
+<td class="failures">failed</td>
 </tr>
 <tr>
 <td class="success">testPrallelImportAction_IsCompleted()</td>
-<td class="success">0.005s</td>
+<td class="success">0.007s</td>
 <td class="success">passed</td>
 </tr>
 </table>
 </div>
-<div id="tab1" class="tab">
-<h2>Standard output</h2>
-<span class="code">
-<pre>resources/Android.bib 28
-resources/PAUploadData1.bib 29
-resources/ConstraintLogic.bib 31
-resources/Android.bib 30
-resources/FaultTolerant.bib 33
-resources/neural.bib 32
-resources/PAData.bib 34
-resources/PAUploadData1.bib 35
-resources/Android.bib 36
-resources/ConstraintLogic.bib 37
-resources/PAData.bib 38
-resources/FaultTolerant.bib 39
-resources/PCA.bib 40
-resources/FaultToleant.bib 42
-resources/neural.bib 44
-resources/InformationFlow.bib 46
-resources/Android.bib 48
-resources/neural.bib 41
-resources/FaultTolerant.bib 42
-</pre>
-</span>
-</div>
 <div id="tab2" class="tab">
 <h2>Standard error</h2>
 <span class="code">
-<pre>Exception in thread &quot;pool-2-thread-2&quot; java.lang.AssertionError
-	at hk.ust.comp3021.utils.BibParser.processAuthorLine(BibParser.java:90)
-	at hk.ust.comp3021.utils.BibParser.parse(BibParser.java:50)
-	at hk.ust.comp3021.MiniMendeleyEngine.lambda$processParallelImport$12(MiniMendeleyEngine.java:392)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+<pre>Exception in thread &quot;Thread-13&quot; java.lang.IllegalMonitorStateException: current thread is not owner
+	at java.base/java.lang.Object.notifyAll(Native Method)
+	at hk.ust.comp3021.MiniMendeleyEngine.lambda$processParallelImport$12(MiniMendeleyEngine.java:395)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-Exception in thread &quot;pool-2-thread-3&quot; java.lang.AssertionError
-	at hk.ust.comp3021.utils.BibParser.processAuthorLine(BibParser.java:90)
-	at hk.ust.comp3021.utils.BibParser.parse(BibParser.java:50)
-	at hk.ust.comp3021.MiniMendeleyEngine.lambda$processParallelImport$12(MiniMendeleyEngine.java:392)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+Exception in thread &quot;Thread-12&quot; java.lang.IllegalMonitorStateException: current thread is not owner
+	at java.base/java.lang.Object.notifyAll(Native Method)
+	at hk.ust.comp3021.MiniMendeleyEngine.lambda$processParallelImport$12(MiniMendeleyEngine.java:395)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-Exception in thread &quot;pool-2-thread-4&quot; java.lang.AssertionError
-	at hk.ust.comp3021.utils.BibParser.processAuthorLine(BibParser.java:90)
-	at hk.ust.comp3021.utils.BibParser.parse(BibParser.java:50)
-	at hk.ust.comp3021.MiniMendeleyEngine.lambda$processParallelImport$12(MiniMendeleyEngine.java:392)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+Exception in thread &quot;Thread-22&quot; java.lang.IllegalMonitorStateException: current thread is not owner
+	at java.base/java.lang.Object.notifyAll(Native Method)
+	at hk.ust.comp3021.MiniMendeleyEngine.lambda$processParallelImport$12(MiniMendeleyEngine.java:395)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-Exception in thread &quot;pool-3-thread-1&quot; java.lang.AssertionError
-	at hk.ust.comp3021.utils.BibParser.processAuthorLine(BibParser.java:87)
-	at hk.ust.comp3021.utils.BibParser.parse(BibParser.java:50)
-	at hk.ust.comp3021.MiniMendeleyEngine.lambda$processParallelImport$12(MiniMendeleyEngine.java:392)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+Exception in thread &quot;Thread-25&quot; java.lang.IllegalMonitorStateException: current thread is not owner
+	at java.base/java.lang.Object.notifyAll(Native Method)
+	at hk.ust.comp3021.MiniMendeleyEngine.lambda$processParallelImport$12(MiniMendeleyEngine.java:395)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-Exception in thread &quot;pool-4-thread-2&quot; java.lang.AssertionError
-	at hk.ust.comp3021.utils.BibParser.processAuthorLine(BibParser.java:90)
-	at hk.ust.comp3021.utils.BibParser.parse(BibParser.java:50)
-	at hk.ust.comp3021.MiniMendeleyEngine.lambda$processParallelImport$12(MiniMendeleyEngine.java:392)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+Exception in thread &quot;Thread-24&quot; java.lang.IllegalMonitorStateException: current thread is not owner
+	at java.base/java.lang.Object.notifyAll(Native Method)
+	at hk.ust.comp3021.MiniMendeleyEngine.lambda$processParallelImport$12(MiniMendeleyEngine.java:395)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-Exception in thread &quot;pool-4-thread-4&quot; java.lang.AssertionError
-	at hk.ust.comp3021.utils.BibParser.processAuthorLine(BibParser.java:90)
-	at hk.ust.comp3021.utils.BibParser.parse(BibParser.java:50)
-	at hk.ust.comp3021.MiniMendeleyEngine.lambda$processParallelImport$12(MiniMendeleyEngine.java:392)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+Exception in thread &quot;Thread-23&quot; java.lang.IllegalMonitorStateException: current thread is not owner
+	at java.base/java.lang.Object.notifyAll(Native Method)
+	at hk.ust.comp3021.MiniMendeleyEngine.lambda$processParallelImport$12(MiniMendeleyEngine.java:395)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-Exception in thread &quot;pool-4-thread-5&quot; java.lang.AssertionError
-	at hk.ust.comp3021.utils.BibParser.processAuthorLine(BibParser.java:90)
-	at hk.ust.comp3021.utils.BibParser.parse(BibParser.java:50)
-	at hk.ust.comp3021.MiniMendeleyEngine.lambda$processParallelImport$12(MiniMendeleyEngine.java:392)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+Exception in thread &quot;Thread-32&quot; java.lang.IllegalMonitorStateException: current thread is not owner
+	at java.base/java.lang.Object.notifyAll(Native Method)
+	at hk.ust.comp3021.MiniMendeleyEngine.lambda$processParallelImport$12(MiniMendeleyEngine.java:395)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-Exception in thread &quot;pool-4-thread-9&quot; java.lang.AssertionError
-	at hk.ust.comp3021.utils.BibParser.processAuthorLine(BibParser.java:90)
-	at hk.ust.comp3021.utils.BibParser.parse(BibParser.java:50)
-	at hk.ust.comp3021.MiniMendeleyEngine.lambda$processParallelImport$12(MiniMendeleyEngine.java:392)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+Exception in thread &quot;Thread-33&quot; java.lang.IllegalMonitorStateException: current thread is not owner
+	at java.base/java.lang.Object.notifyAll(Native Method)
+	at hk.ust.comp3021.MiniMendeleyEngine.lambda$processParallelImport$12(MiniMendeleyEngine.java:395)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-Exception in thread &quot;pool-4-thread-11&quot; java.lang.AssertionError
-	at hk.ust.comp3021.utils.BibParser.processOtherLine(BibParser.java:107)
-	at hk.ust.comp3021.utils.BibParser.parse(BibParser.java:54)
-	at hk.ust.comp3021.MiniMendeleyEngine.lambda$processParallelImport$12(MiniMendeleyEngine.java:392)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+Exception in thread &quot;Thread-42&quot; java.lang.IllegalMonitorStateException: current thread is not owner
+	at java.base/java.lang.Object.notifyAll(Native Method)
+	at hk.ust.comp3021.MiniMendeleyEngine.lambda$processParallelImport$12(MiniMendeleyEngine.java:395)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Exception in thread &quot;Thread-43&quot; java.lang.IllegalMonitorStateException: current thread is not owner
+	at java.base/java.lang.Object.notifyAll(Native Method)
+	at hk.ust.comp3021.MiniMendeleyEngine.lambda$processParallelImport$12(MiniMendeleyEngine.java:395)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Exception in thread &quot;Thread-47&quot; java.lang.IllegalMonitorStateException: current thread is not owner
+	at java.base/java.lang.Object.notifyAll(Native Method)
+	at hk.ust.comp3021.MiniMendeleyEngine.lambda$processParallelImport$12(MiniMendeleyEngine.java:395)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Exception in thread &quot;Thread-46&quot; java.lang.IllegalMonitorStateException: current thread is not owner
+	at java.base/java.lang.Object.notifyAll(Native Method)
+	at hk.ust.comp3021.MiniMendeleyEngine.lambda$processParallelImport$12(MiniMendeleyEngine.java:395)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Exception in thread &quot;Thread-51&quot; java.lang.IllegalMonitorStateException: current thread is not owner
+	at java.base/java.lang.Object.notifyAll(Native Method)
+	at hk.ust.comp3021.MiniMendeleyEngine.lambda$processParallelImport$12(MiniMendeleyEngine.java:395)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Exception in thread &quot;Thread-44&quot; java.lang.IllegalMonitorStateException: current thread is not owner
+	at java.base/java.lang.Object.notifyAll(Native Method)
+	at hk.ust.comp3021.MiniMendeleyEngine.lambda$processParallelImport$12(MiniMendeleyEngine.java:395)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Exception in thread &quot;Thread-45&quot; java.lang.IllegalMonitorStateException: current thread is not owner
+	at java.base/java.lang.Object.notifyAll(Native Method)
+	at hk.ust.comp3021.MiniMendeleyEngine.lambda$processParallelImport$12(MiniMendeleyEngine.java:395)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Exception in thread &quot;Thread-50&quot; java.lang.IllegalMonitorStateException: current thread is not owner
+	at java.base/java.lang.Object.notifyAll(Native Method)
+	at hk.ust.comp3021.MiniMendeleyEngine.lambda$processParallelImport$12(MiniMendeleyEngine.java:395)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Exception in thread &quot;Thread-49&quot; java.lang.IllegalMonitorStateException: current thread is not owner
+	at java.base/java.lang.Object.notifyAll(Native Method)
+	at hk.ust.comp3021.MiniMendeleyEngine.lambda$processParallelImport$12(MiniMendeleyEngine.java:395)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Exception in thread &quot;Thread-48&quot; java.lang.IllegalMonitorStateException: current thread is not owner
+	at java.base/java.lang.Object.notifyAll(Native Method)
+	at hk.ust.comp3021.MiniMendeleyEngine.lambda$processParallelImport$12(MiniMendeleyEngine.java:395)
 	at java.base/java.lang.Thread.run(Thread.java:833)
 </pre>
 </span>
@@ -209,7 +384,7 @@ Exception in thread &quot;pool-4-thread-11&quot; java.lang.AssertionError
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.5</a> at 2023/5/9 下午 04:54:55</p>
+<a href="http://www.gradle.org">Gradle 7.5</a> at 2023/5/9 下午 10:41:28</p>
 </div>
 </div>
 </body>
