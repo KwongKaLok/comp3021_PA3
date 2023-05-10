@@ -460,46 +460,106 @@ public class MiniMendeleyEngine {
      */
     public void processMultiKeywordSearch(User curUser, SearchMultipleKeywordsAction multipleSearch)
             throws InterruptedException {
-        ArrayList<String>tempWords = new ArrayList<>();
-        for(String word:multipleSearch.getWords()){
-            if(!tempWords.contains(word)){
+//        ArrayList<String>tempWords = new ArrayList<>();
+//        for(String word:multipleSearch.getWords()){
+//            if(!tempWords.contains(word)){
+//                tempWords.add(word);
+//            }
+//        }
+//        multipleSearch.setWords(tempWords);
+////        List<Thread> searchThreads = new ArrayList<>();
+//        Thread[] searchThreads = new Thread[5];
+//        Semaphore semaphore = new Semaphore(5);
+//        ArrayList<Paper>results = new ArrayList<>();
+////        for (String word : multipleSearch.getWords())
+//        for(int i=0;i<multipleSearch.getWords().size();i++){
+//            String word = multipleSearch.getWords().get(i);
+//            searchThreads[i]=(new Thread(() -> {
+//                try {
+//                    semaphore.acquire();
+//                    for (String paperId : paperBase.keySet()) {
+//                        Paper paper = paperBase.get(paperId);
+//                        if(paper.getTitle()!=null){
+//                            if (paper.getTitle().contains(word)){
+//                                synchronized (this) {
+//                                    results.add(paper);
+//                                    multipleSearch.increaseFound();
+//                                    multipleSearch.setFound(true);
+//                                }
+//                            }
+//                        }else if(paper.getKeywords()!=null){
+//                            if (paper.getKeywords().contains(word)){
+//                                synchronized (this) {
+//                                    results.add(paper);
+//                                    multipleSearch.increaseFound();
+//                                    multipleSearch.setFound(true);
+//                                }
+//                            }
+//                        }else if(paper.getAbsContent()!=null){
+//                            if (paper.getAbsContent().contains(word)){
+//                                synchronized (this) {
+//                                    results.add(paper);
+//                                    multipleSearch.increaseFound();
+//                                    multipleSearch.setFound(true);
+//                                }
+//                            }
+//                        }
+//                    }
+//                    synchronized (this) {
+//                        multipleSearch.setResults(results);
+//                    }
+//                } catch (InterruptedException ex) {
+//                    ex.printStackTrace();
+//                } finally {
+//                    semaphore.release();
+//                }
+//            }));
+//        }
+//        for (Thread thread : searchThreads) {
+//            thread.start();
+//        }
+//
+//        for (Thread thread : searchThreads) {
+//            thread.join();
+//        }
+//        this.getActions().add(multipleSearch);
+        ArrayList<String> tempWords = new ArrayList<>();
+        for (String word : multipleSearch.getWords()) {
+            if (!tempWords.contains(word)) {
                 tempWords.add(word);
             }
         }
         multipleSearch.setWords(tempWords);
-        List<Thread> searchThreads = new ArrayList<>();
+
+        Thread[] searchThreads = new Thread[5];
         Semaphore semaphore = new Semaphore(5);
-        ArrayList<Paper>results = new ArrayList<>();
-        for (String word : multipleSearch.getWords()) {
-            searchThreads.add(new Thread(() -> {
+        ArrayList<Paper> results = new ArrayList<>();
+
+        for (int i = 0; i < multipleSearch.getWords().size(); i++) {
+            String word = multipleSearch.getWords().get(i);
+            int threadIndex = i % 5;
+            searchThreads[threadIndex] = new Thread(() -> {
                 try {
                     semaphore.acquire();
-
                     for (String paperId : paperBase.keySet()) {
                         Paper paper = paperBase.get(paperId);
-                        if(paper.getTitle()!=null){
-                            if (paper.getTitle().contains(word)){
-                                synchronized (this) {
-                                    results.add(paper);
-                                    multipleSearch.increaseFound();
-                                    multipleSearch.setFound(true);
-                                }
+                        if (paper.getTitle() != null && paper.getTitle().contains(word)) {
+                            synchronized (this) {
+                                results.add(paper);
+                                multipleSearch.increaseFound();
+                                multipleSearch.setFound(true);
                             }
-                        }else if(paper.getKeywords()!=null){
-                            if (paper.getKeywords().contains(word)){
-                                synchronized (this) {
-                                    results.add(paper);
-                                    multipleSearch.increaseFound();
-                                    multipleSearch.setFound(true);
-                                }
+                        } else if (paper.getKeywords() != null && paper.getKeywords().contains(word)) {
+                            synchronized (this) {
+                                results.add(paper);
+                                multipleSearch.increaseFound();
+                                multipleSearch.setFound(true);
                             }
-                        }else if(paper.getAbsContent()!=null){
-                            if (paper.getAbsContent().contains(word)){
-                                synchronized (this) {
-                                    results.add(paper);
-                                    multipleSearch.increaseFound();
-                                    multipleSearch.setFound(true);
-                                }
+                        } else if (paper.getAbsContent() != null && paper.getAbsContent().contains(word)) {
+                            synchronized (this) {
+                                results.add(paper);
+                                multipleSearch.increaseFound();
+                                multipleSearch.setFound(true);
                             }
                         }
                     }
@@ -511,15 +571,21 @@ public class MiniMendeleyEngine {
                 } finally {
                     semaphore.release();
                 }
-            }));
-        }
-        for (Thread thread : searchThreads) {
-            thread.start();
+            });
         }
 
         for (Thread thread : searchThreads) {
-            thread.join();
+            if (thread != null) {
+                thread.start();
+            }
         }
+
+        for (Thread thread : searchThreads) {
+            if (thread != null) {
+                thread.join();
+            }
+        }
+
         this.getActions().add(multipleSearch);
     }
 
@@ -531,9 +597,21 @@ public class MiniMendeleyEngine {
      */
     public Runnable processAddLabel(User curUser, LabelActionList actionList) {
         return new Runnable() {
-
             @Override
             public void run() {
+                try {
+                    LabelAction labelAction = actionList.getHead();
+                    if(labelAction.getActionType().equals(Action.ActionType.ADD_LABEL) ){
+                        AddLabelAction action = new AddLabelAction("Action_" + actions.size(),
+                                curUser, new Date(), labelAction.getLabel(),labelAction.getPaperID());
+                        actions.add(action);
+                        processAddLabelAction(curUser,action);
+                        actionList.addProcessedLabel(labelAction.getLabel());
+                        actionList.dequeue();
+                    }
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
             }
         };
     }
@@ -562,6 +640,15 @@ public class MiniMendeleyEngine {
         return new Runnable() {
             @Override
             public void run() {
+                try {
+                    LabelAction labelAction = actionList.getHead();
+                    if(labelAction.getActionType().equals(Action.ActionType.DELETE_LABELS) ){
+                        labelAction.setLabel(null);
+                        actionList.dequeue();
+                    }
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
             }
         };
     }
@@ -965,6 +1052,8 @@ public class MiniMendeleyEngine {
                             scan13 = new Scanner(System.in);
                             if (scan13.hasNextLine()) {
                                 String paperId = scan13.nextLine();
+
+
                             }
                             break;
 

@@ -25,7 +25,9 @@ public class LabelActionList {
      * Implement this method to safely add a query to @labelActionsQueue
      */
     public void enqueue(LabelAction item) {
-
+        synchronized (labelActionsQueue){
+            labelActionsQueue.add(item);
+        }
     }
 
     /**
@@ -35,6 +37,10 @@ public class LabelActionList {
      * @throws InterruptedException
      */
     public LabelAction dequeue() throws InterruptedException {
+        while (labelActionsQueue.isEmpty()) {
+            wait(); // wait until there is an element in the queue
+        }
+        labelActionsQueue.remove();
         return null;
     }
 
@@ -44,7 +50,7 @@ public class LabelActionList {
      * @throws InterruptedException
      */
     public LabelAction getHead() throws InterruptedException {
-        return null;
+        return labelActionsQueue.peek();
     }
 
     public int getNumOfUpdated() {

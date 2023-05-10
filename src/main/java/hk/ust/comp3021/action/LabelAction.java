@@ -25,6 +25,8 @@ public class LabelAction extends Action {
     public LabelAction(String id, User user, Date time, ActionType actionType, String label) {
         super(id, user, time, actionType);
         // TODO Add suitable code here for the actions on labels
+        this.actionType = actionType;
+        this.label=label;
     }
 
     public Action.ActionType getActionType() {
@@ -76,7 +78,7 @@ public class LabelAction extends Action {
      */
     private ArrayList<String> processInputLabels(String labels) {
         ArrayList<String> labelList = new ArrayList<String>();
-
+        labelList.add(labels);
         return labelList;
     }
 
