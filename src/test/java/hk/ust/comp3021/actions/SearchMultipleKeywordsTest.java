@@ -55,7 +55,6 @@ public class SearchMultipleKeywordsTest {
 				new Date());
 		searchMultipleKeywordsAction.setWords(words);
 		engine.processMultiKeywordSearch(user, searchMultipleKeywordsAction);
-
 		assertTrue(searchMultipleKeywordsAction.isFound());
 	}
 
@@ -109,7 +108,6 @@ public class SearchMultipleKeywordsTest {
 				new Date());
 		searchMultipleKeywordsAction.setWords(words);
 		engine.processMultiKeywordSearch(user, searchMultipleKeywordsAction);
-
 		assertTrue(searchMultipleKeywordsAction.getWords().size() < 10);
 		assertTrue(searchMultipleKeywordsAction.isFound());
 	}

@@ -460,37 +460,67 @@ public class MiniMendeleyEngine {
      */
     public void processMultiKeywordSearch(User curUser, SearchMultipleKeywordsAction multipleSearch)
             throws InterruptedException {
-        List<String> words = multipleSearch.getWords();
-        Map<String, String> results = new HashMap<>();
-        int foundResults = 0;
-
+        ArrayList<String>tempWords = new ArrayList<>();
+        for(String word:multipleSearch.getWords()){
+            if(!tempWords.contains(word)){
+                tempWords.add(word);
+            }
+        }
+        multipleSearch.setWords(tempWords);
+        List<Thread> searchThreads = new ArrayList<>();
         Semaphore semaphore = new Semaphore(5);
-        Object lock = new Object();
+        ArrayList<Paper>results = new ArrayList<>();
+        for (String word : multipleSearch.getWords()) {
+            searchThreads.add(new Thread(() -> {
+                try {
+                    semaphore.acquire();
 
-        for (String word : words) {
-            semaphore.acquire();
-            new Thread(() -> {
-                for (String paperId : paperBase.keySet()) {
-                    Paper paper = paperBase.get(paperId);
-                    if (paper.getTitle().contains(word) || paper.getKeywords().contains(word)) {
-                        synchronized (lock) {
-                            results.put(paper.getPaperID(), paper.getTitle());
-                            multipleSearch.increaseFound();
+                    for (String paperId : paperBase.keySet()) {
+                        Paper paper = paperBase.get(paperId);
+                        if(paper.getTitle()!=null){
+                            if (paper.getTitle().contains(word)){
+                                synchronized (this) {
+                                    results.add(paper);
+                                    multipleSearch.increaseFound();
+                                    multipleSearch.setFound(true);
+                                }
+                            }
+                        }else if(paper.getKeywords()!=null){
+                            if (paper.getKeywords().contains(word)){
+                                synchronized (this) {
+                                    results.add(paper);
+                                    multipleSearch.increaseFound();
+                                    multipleSearch.setFound(true);
+                                }
+                            }
+                        }else if(paper.getAbsContent()!=null){
+                            if (paper.getAbsContent().contains(word)){
+                                synchronized (this) {
+                                    results.add(paper);
+                                    multipleSearch.increaseFound();
+                                    multipleSearch.setFound(true);
+                                }
+                            }
                         }
                     }
+                    synchronized (this) {
+                        multipleSearch.setResults(results);
+                    }
+                } catch (InterruptedException ex) {
+                    ex.printStackTrace();
+                } finally {
+                    semaphore.release();
                 }
-                semaphore.release();
-            }).start();
+            }));
+        }
+        for (Thread thread : searchThreads) {
+            thread.start();
         }
 
-        semaphore.acquire(5);
+        for (Thread thread : searchThreads) {
+            thread.join();
+        }
         this.getActions().add(multipleSearch);
-        for (String paperId : results.keySet()) {
-            System.out.println("Paper ID: " + paperId + ", Title: " + results.get(paperId));
-        }
-        System.out.println("Found " + multipleSearch.getFoundResult() + " results.");
-
-
     }
 
     /***
