@@ -37,8 +37,43 @@ public class Query {
      * @return
      */
     private boolean processQuery(String query) {
+        String[] parts = query.split(",");
+        if (parts.length < 3 || parts.length > 4) {
+            return false;
+        }
 
-        return false;
+        String queryType = parts[0].trim();
+        this.object = getTarget(parts[1].trim());
+        System.out.println("JI");
+        System.out.println(queryType);
+        System.out.println(QueryType.REMOVE.name());
+        if (queryType.equals(QueryType.ADD.name())) {
+            if (parts.length != 3) {
+                return false;
+            }
+            this.type = QueryType.ADD;
+            this.value = parts[2].trim();
+
+            return true;
+        } else if (queryType.equals(QueryType.REMOVE.name())) {
+            System.out.println("remove");
+            if (parts.length != 3) {
+                return false;
+            }
+            this.type = QueryType.REMOVE;
+            this.condition = parts[2].trim();
+            return true;
+        } else if (queryType.equals(QueryType.UPDATE.name())) {
+            if (parts.length != 4) {
+                return false;
+            }
+            this.type = QueryType.UPDATE;
+            this.condition = parts[2].trim();
+            this.value = parts[3].trim();
+            return true;
+        } else {
+            return false;
+        }
     }
     /**
      * TODO Implement this function to find out which part of a bib format of a paper must be modified
@@ -47,7 +82,21 @@ public class Query {
      */
     private Target getTarget(String target) {
 
-        return null;
+        if (target.equalsIgnoreCase("PAPER")) {
+            return Target.PAPER;
+        } else if (target.equalsIgnoreCase("AUTHOR")) {
+            return Target.AUTHOR;
+        } else if (target.equalsIgnoreCase("JOURNAL")) {
+            return Target.JOURNAL;
+        } else if (target.equalsIgnoreCase("YEAR")) {
+            return Target.YEAR;
+        } else if (target.equalsIgnoreCase("KEYWORDS")) {
+            return Target.KEYWORDS;
+        } else if (target.equalsIgnoreCase("TITLE")) {
+            return Target.TITLE;
+        } else {
+            return null;
+        }
     }
 
     public Target getObject() {

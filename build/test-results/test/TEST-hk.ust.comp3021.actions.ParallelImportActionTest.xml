@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="hk.ust.comp3021.actions.ParallelImportActionTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-05-10T18:13:26" hostname="KadeMacBook-Air-6.local" time="0.068">
+<testsuite name="hk.ust.comp3021.actions.ParallelImportActionTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-05-12T07:42:02" hostname="KadeMacBook-Air-6.local" time="0.035">
   <properties/>
-  <testcase name="testPrallelImportAction_IsCompleted()" classname="hk.ust.comp3021.actions.ParallelImportActionTest" time="0.027"/>
-  <testcase name="testPrallelImportAction_ActionsSize()" classname="hk.ust.comp3021.actions.ParallelImportActionTest" time="0.012"/>
-  <testcase name="testPrallelImportAction_CheckPaperSet()" classname="hk.ust.comp3021.actions.ParallelImportActionTest" time="0.011"/>
-  <testcase name="testPrallelImportAction_CheckPaperContent()" classname="hk.ust.comp3021.actions.ParallelImportActionTest" time="0.005"/>
-  <testcase name="testPrallelImportAction_CheckNumberOfFilePaths()" classname="hk.ust.comp3021.actions.ParallelImportActionTest" time="0.01"/>
+  <testcase name="testPrallelImportAction_IsCompleted()" classname="hk.ust.comp3021.actions.ParallelImportActionTest" time="0.006"/>
+  <testcase name="testPrallelImportAction_ActionsSize()" classname="hk.ust.comp3021.actions.ParallelImportActionTest" time="0.004"/>
+  <testcase name="testPrallelImportAction_CheckPaperSet()" classname="hk.ust.comp3021.actions.ParallelImportActionTest" time="0.007"/>
+  <testcase name="testPrallelImportAction_CheckPaperContent()" classname="hk.ust.comp3021.actions.ParallelImportActionTest" time="0.003"/>
+  <testcase name="testPrallelImportAction_CheckNumberOfFilePaths()" classname="hk.ust.comp3021.actions.ParallelImportActionTest" time="0.012"/>
   <system-out><![CDATA[3]]></system-out>
-  <system-err><![CDATA[Exception in thread "Thread-32" java.lang.AssertionError
+  <system-err><![CDATA[Exception in thread "Thread-922" java.lang.AssertionError
 	at hk.ust.comp3021.utils.BibParser.processAuthorLine(BibParser.java:87)
 	at hk.ust.comp3021.utils.BibParser.parse(BibParser.java:50)
-	at hk.ust.comp3021.MiniMendeleyEngine.lambda$processParallelImport$12(MiniMendeleyEngine.java:398)
+	at hk.ust.comp3021.MiniMendeleyEngine.lambda$processParallelImport$12(MiniMendeleyEngine.java:395)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-Exception in thread "Thread-50" java.lang.AssertionError
+Exception in thread "Thread-940" java.lang.AssertionError
 	at hk.ust.comp3021.utils.BibParser.processAuthorLine(BibParser.java:87)
 	at hk.ust.comp3021.utils.BibParser.parse(BibParser.java:50)
-	at hk.ust.comp3021.MiniMendeleyEngine.lambda$processParallelImport$12(MiniMendeleyEngine.java:398)
+	at hk.ust.comp3021.MiniMendeleyEngine.lambda$processParallelImport$12(MiniMendeleyEngine.java:395)
 	at java.base/java.lang.Thread.run(Thread.java:833)
 ]]></system-err>
 </testsuite>

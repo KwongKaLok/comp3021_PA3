@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="hk.ust.comp3021.actions.SearchMultipleKeywordsTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-05-10T18:13:26" hostname="KadeMacBook-Air-6.local" time="0.024">
+<testsuite name="hk.ust.comp3021.actions.SearchMultipleKeywordsTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-05-12T07:42:02" hostname="KadeMacBook-Air-6.local" time="0.027">
   <properties/>
-  <testcase name="testSearchMultipleKeywords_IsFound()" classname="hk.ust.comp3021.actions.SearchMultipleKeywordsTest" time="0.006"/>
+  <testcase name="testSearchMultipleKeywords_IsFound()" classname="hk.ust.comp3021.actions.SearchMultipleKeywordsTest" time="0.005"/>
   <testcase name="testSearchMultipleKeywords_ActionsSize()" classname="hk.ust.comp3021.actions.SearchMultipleKeywordsTest" time="0.004"/>
-  <testcase name="testSearchMultipleKeywords_CheckNumberOfWords()" classname="hk.ust.comp3021.actions.SearchMultipleKeywordsTest" time="0.004"/>
-  <testcase name="testSearchMultipleKeywords_CheckNumberOfWords1()" classname="hk.ust.comp3021.actions.SearchMultipleKeywordsTest" time="0.006"/>
-  <testcase name="testSearchMultipleKeywords_CheckNumberOfWords2()" classname="hk.ust.comp3021.actions.SearchMultipleKeywordsTest" time="0.003"/>
+  <testcase name="testSearchMultipleKeywords_CheckNumberOfWords()" classname="hk.ust.comp3021.actions.SearchMultipleKeywordsTest" time="0.005"/>
+  <testcase name="testSearchMultipleKeywords_CheckNumberOfWords1()" classname="hk.ust.comp3021.actions.SearchMultipleKeywordsTest" time="0.005"/>
+  <testcase name="testSearchMultipleKeywords_CheckNumberOfWords2()" classname="hk.ust.comp3021.actions.SearchMultipleKeywordsTest" time="0.005"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

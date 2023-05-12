@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="hk.ust.comp3021.actions.ModifyLabelListTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-05-10T18:13:23" hostname="KadeMacBook-Air-6.local" time="3.03">
+<testsuite name="hk.ust.comp3021.actions.ModifyLabelListTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-05-12T07:41:59" hostname="KadeMacBook-Air-6.local" time="3.029">
   <properties/>
   <testcase name="ModifyLabelList_CheckDuplicateDelete()" classname="hk.ust.comp3021.actions.ModifyLabelListTest" time="1.009"/>
-  <testcase name="ModifyLabelList_CheckDuplicateUpdate()" classname="hk.ust.comp3021.actions.ModifyLabelListTest" time="1.009"/>
-  <testcase name="ModifyLabelList_CheckDuplicateAdd()" classname="hk.ust.comp3021.actions.ModifyLabelListTest" time="1.009"/>
+  <testcase name="ModifyLabelList_CheckDuplicateUpdate()" classname="hk.ust.comp3021.actions.ModifyLabelListTest" time="1.01"/>
+  <testcase name="ModifyLabelList_CheckDuplicateAdd()" classname="hk.ust.comp3021.actions.ModifyLabelListTest" time="1.005"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
+  <system-err><![CDATA[Exception in thread "Thread-900" java.lang.NullPointerException: Cannot invoke "String.equals(Object)" because the return value of "hk.ust.comp3021.resource.Label.getContent()" is null
+	at hk.ust.comp3021.MiniMendeleyEngine$2.run(MiniMendeleyEngine.java:565)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+]]></system-err>
 </testsuite>

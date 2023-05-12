@@ -4,6 +4,7 @@ import hk.ust.comp3021.action.Action;
 import hk.ust.comp3021.action.LabelAction;
 import hk.ust.comp3021.action.LabelActionList;
 import hk.ust.comp3021.person.User;
+import hk.ust.comp3021.resource.Label;
 import hk.ust.comp3021.utils.TestKind;
 import hk.ust.comp3021.MiniMendeleyEngine;
 
@@ -73,7 +74,6 @@ public class ModifyLabelListTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 		actionList.setFinished(true);
 		assertTrue(actionList.getProcessedLabels().size() >= 1);
 	}
