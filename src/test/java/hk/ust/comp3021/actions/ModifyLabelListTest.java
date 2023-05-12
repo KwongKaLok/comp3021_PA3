@@ -75,6 +75,7 @@ public class ModifyLabelListTest {
 			e.printStackTrace();
 		}
 		actionList.setFinished(true);
+
 		assertTrue(actionList.getProcessedLabels().size() >= 1);
 	}
 
@@ -118,6 +119,7 @@ public class ModifyLabelListTest {
 			e.printStackTrace();
 		}
 		actionList.setFinished(true);
+
 		assertTrue(actionList.getProcessedLabels().size() >= 1);
 	}
 

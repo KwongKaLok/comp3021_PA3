@@ -514,22 +514,22 @@ public class MiniMendeleyEngine {
     return new Runnable() {
       @Override
       public void run() {
-        synchronized (this) {
+//        synchronized (actionList) {
           try {
             LabelAction labelAction;
-            while ((labelAction = actionList.getHead()) != null) {
-              if (labelAction.getActionType().equals(Action.ActionType.ADD_LABEL)) {
+            while ((labelAction = actionList.getHead()) != null&&labelAction.getActionType().equals(Action.ActionType.ADD_LABEL)) {
+//              if (labelAction.getActionType().equals(Action.ActionType.ADD_LABEL)) {
                 AddLabelAction action = new AddLabelAction("Action_" + labelAction.getId(), curUser,
                     labelAction.getTime(), labelAction.getLabel(), labelAction.getPaperID());
                 processAddLabelAction(curUser, action);
                 actionList.dequeue();
-              }
-
+//              }
+//                actionList.notifyAll();
             }
           } catch (InterruptedException e) {
             throw new RuntimeException(e);
           }
-        }
+//        }
       }
     };
   }
@@ -545,38 +545,34 @@ public class MiniMendeleyEngine {
     return new Runnable() {
       @Override
       public void run() {
-        synchronized (this) {
-          try {
-            LabelAction labelAction;
-            while ((labelAction = actionList.getHead()) != null) {
-              if (labelAction.getActionType().equals(Action.ActionType.UPDATE_LABELS)) {
-                String label = labelAction.getLabel();
-                if (!actionList.getProcessedLabels().contains(label)) {
-                  actionList.addProcessedLabel(label);
-                }
-                for (Map.Entry<String, Paper> entry : paperBase.entrySet()) {
-                  Paper paper = entry.getValue();
-                  for (Label paperLabel : paper.getLabels()) {
-                    if (paperLabel.getContent().equals(label)) {
-                      paperLabel.setContent(labelAction.getNewLabel());
-                    }
+              try{
+                  while (!actionList.isFinished()){
+                      LabelAction labelAction= actionList.getHead();
+                      while (labelAction==null||!labelAction.getActionType().equals(Action.ActionType.UPDATE_LABELS) ){
+                          labelAction = actionList.getHead();
+                      }
+                      String label = labelAction.getLabel();
+                      if (!actionList.getProcessedLabels().contains(label)) {
+                          actionList.addProcessedLabel(label);
+                      }
+                      for (Map.Entry<String, Paper> entry : paperBase.entrySet()) {
+                          Paper paper = entry.getValue();
+                          for (Label paperLabel : paper.getLabels()) {
+                              if (paperLabel.getContent().equals(label)) {
+                                  paperLabel.setContent(labelAction.getNewLabel());
+                              }
+                          }
+                      }
+                      for (Label tempLabel : labels) {
+                          if (tempLabel.getContent().equals(label)) {
+                              tempLabel.setContent(labelAction.getNewLabel());
+                          }
+                      }
+                      actionList.dequeue();
                   }
-                  for (Label tempLabel : labels) {
-                    if (tempLabel.getContent().equals(label)) {
-                      tempLabel.setContent(labelAction.getNewLabel());
-                    }
-                  }
-                }
-
-                actionList.dequeue();
+              } catch (InterruptedException e) {
+                  throw new RuntimeException(e);
               }
-
-            }
-
-          } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-          }
-        }
       }
     };
   }
@@ -592,30 +588,26 @@ public class MiniMendeleyEngine {
     return new Runnable() {
       @Override
       public void run() {
-        synchronized (this) {
-          try {
-            LabelAction labelAction;
-            while ((labelAction = actionList.getHead()) != null) {
-              if (labelAction.getActionType().equals(Action.ActionType.DELETE_LABELS)) {
-                String label = labelAction.getLabel();
-                if (!actionList.getProcessedLabels().contains(label)) {
-                  actionList.addProcessedLabel(label);
-                }
-                for (Map.Entry<String, Paper> entry : paperBase.entrySet()) {
+          try{
+              while (!actionList.isFinished()){
+                  LabelAction labelAction= actionList.getHead();
+                  while (labelAction==null||!labelAction.getActionType().equals(Action.ActionType.DELETE_LABELS) ){
+                      labelAction = actionList.getHead();
+                  }
+                  String label = labelAction.getLabel();
+                  if (!actionList.getProcessedLabels().contains(label)) {
+                      actionList.addProcessedLabel(label);
+                  }
+                  for (Map.Entry<String, Paper> entry : paperBase.entrySet()) {
                   Paper paper = entry.getValue();
                   paper.getLabels().removeIf(paperLabel -> paperLabel.getContent().equals(label));
+                  }
                   labels.removeIf(paperLabel -> paperLabel.getContent().equals(label));
-
-                }
-                actionList.dequeue();
+                  actionList.dequeue();
               }
-
-            }
-
           } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+              throw new RuntimeException(e);
           }
-        }
       }
     };
   }
